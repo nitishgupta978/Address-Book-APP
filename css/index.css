@@ -1,0 +1,125 @@
+body{
+    margin: 0%;
+    height: 10%;
+    width: 1.1%;
+
+}
+.header {
+    padding: 15px 0;
+    background-color: antiquewhite;
+}
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid blue;
+
+}
+.logo-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0px solid blue;
+    width: 80%;
+
+}
+.logo-content-img {
+     border: solid 0px black;
+
+}
+/* using by color change Employee payroll text right side of logo */
+.emp-text {
+    font: normal normal bold 20px/25px montserrat;
+    font-family: "montserrat",seens-serif;
+    color: rgb(18, 18, 236);
+    text-transform:capitalize ;
+    /* position: fixed;
+    margin-top: 1px; */
+    
+}
+/* color change only payroll text */
+.emp-payroll{
+
+    color: black;
+}
+.add-person{
+  margin-top: 1;
+    position: fixed;
+   
+}
+*{box-sizing: border-box;}
+
+/* UC2 */
+.form-content {
+    min-height: calc(100% -80%);
+    background-color: rgb(217, 139, 23);
+    display: flex;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid green;
+}
+.form {
+    width: 65%;
+    padding: 44px 60px ;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #f5f5f5;
+    border-radius: 8px;
+    opacity: 1;
+}
+.form-head {
+    font: normal normal bold 25px/37px Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    text-transform: capitalize;
+    opacity: 1;
+    padding-bottom: 20px;
+}
+.row-content {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-bottom:10px ;
+    align-items: center;
+    border: 0px solid rgb(227, 237, 227);
+}
+.label {
+    min-width: 140px;
+}
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+.text {
+    font-size: 16px;
+    color: #42515f;
+    opacity: 1;
+    font-family: Roboto;
+
+}
+.input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid green;
+    border-radius: 4px;
+    resize: vertical;
+}
+/* uc 3 */
+.btn-group button {
+  background-color:cadetblue; /*  background color */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 5px 20px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: inline-start; /* Float the buttons side by side */
+}
+.btn-group1 button {
+    background-color:cadetblue; /*  background color */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 5px 20px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: inline-end; /* Float the buttons side by side */
+  }
