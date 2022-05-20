@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../css/index2.css"> -->
+    <!-- <link rel="stylesheet" href="../JavaScript/index.js"> -->
+    <!-- <script  src="../JavaScript/AddressBookData.js"></script> -->
+    
+    <title>Address Book Form</title>
+</head>
+
+<body>
+    <header class="header-contant header ">
+        <div class="logo-content ">
+            <img src="../assert/Img1 add.png" alt="image" style="height: 50px;">
+            <div>
+                <span class="emp-text">ADDRESS</span><br>
+                <spanc class="emp-text emp-payroll ">BOOK</span>
+                    
+            </div>
+            <!-- <div><span class="emp-text add-person">Add Person Address Book UI/UX Design</span></div> -->
+         </div>
+    </header>
+    <div class="form-content">
+        <!-- <form action="#" class="form" name="myForm" onsubmit="return validateForm()" onreset="resetButton()" method="post"> -->
+            <form action="#" class="form" name="name" onsubmit="getRegistration()" onreset="Reset()">
+        <div class="form-head" >
+        <div class="form-head-text">PERSON ADDRESS FORM</div>
+        <img class="form-head-image" src="../assert/Img1 add.png" alt="logo">
+        </a>
+        </div>
+        <div class="form-constrains">
+        <div class="row-content">
+        <label for="name" class="label text"></label>
+        <br>
+        <input type="text" class="input" id="name" name="Fullname" placeholder="Full Name" required>
+        <error-output class="text-error"></error-output>
+        </div>
+        
+        
+        <div class="row-content">
+        <label for="address" class="label text"></label>
+        <br>
+        <textarea name="address" id="address" placeholder="Your Address" cols="30" rows="3" required></textarea>
+        
+        <error-output class="address-error"></error-output>
+        </div>
+        <div class="row-content">
+        <div class="column-constrains">
+        <div class="column-content">
+        <label for="city" class="label text">City</label>
+            <select name="city" id="city" required>
+            <option selected disabled hidden value="Select City" >Select City</option>
+                    <option value="text-value">Select City</option>
+                    <option value="text-value">Bangalore</option>
+                    <option value="text-value">Chennai</option>
+                    <option value="text-value">Ahmedabad</option>
+                    <option value="text-value">Hyderabad</option>
+                    <option value="text-value">Pune</option>
+                    <option value="text-value">Kolkata</option>
+                    <option value="text-value">Mumbai</option>
+                    <option value="text-value">Lucknow</option>
+                    <option value="text-value">Delhi</option>
+                    <option value="text-value">Surat</option>
+                    <option value="text-value">Jaipur</option>
+                    <option value="text-value">Kanpur</option>
+                    <option value="text-value">Allahabad</option>
+                    <option value="text-value">Madurai</option>
+                    <option value="text-value">Varanasi</option>
+                    <option value="text-value">Agra</option>
+                    <option value="text-value">Patna</option>
+                    <option value="text-value">Nagpure</option>
+                    <option value="text-value">Vadodara</option>
+                    <option value="text-value">Coimbatore</option>
+                    <option value="text-value">Mysore</option>
+                    <option value="text-value">Jabalpur</option>
+                    <option value="text-value">Bhopal</option>
+                    <option value="text-value">Nashik</option>
+        </select>
+        </div>
+        <div class="column-content">
+        <label for="state" class="label text">State</label>
+        <select name="state" id="state" required>
+            <option selected disabled hidden value="Select State">Select State</option>
+            <option value="text-value">Select State</option>
+            <option value="text-value">Andhra Pradesh</option>
+            <option value="text-value">Arunachal Pradesh</option>
+            <option value="text-value">Assam</option>
+            <option value="text-value">Bihar</option>
+            <option value="text-value">Chhattisgarh</option>
+            <option value="text-value">Goa</option>
+            <option value="text-value">Gujarat</option>
+            <option value="text-value">Haryana</option>
+            <option value="text-value">Himachal Pardesh</option>
+            <option value="text-value">Jharkhand</option>
+            <option value="text-value">Karnataka</option>
+            <option value="text-value">Kerala</option>
+            <option value="text-value">Madhey Pradesh</option>
+            <option value="text-value">Maharashtra</option>
+            <option value="text-value">Manipur </option>
+            <option value="text-value">Meghalaya</option>
+            <option value="text-value">Mizoram</option>
+            <option value="text-value">Nagaland</option>
+            <option value="text-value">Odisha </option>
+            <option value="text-value">Punjab</option>
+            <option value="text-value">Rajasthan</option>
+            <option value="text-value">Sikkim</option>
+            <option value="text-value">Tamil Nadu</option>
+            <option value="text-value">Telangana</option>
+            <option value="text-value">Tripura</option>
+            <option value="text-value">Uttar Pradesh</option>
+            <option value="text-value">Uttarakhand</option>
+            <option value="text-value">West Bengal</option>
+        </select>
+        </div>
+        <div class="column-content">
+            <label for="zipcode"></label>
+            <input type="number" placeholder="Zip Code" pattern=".{6,}" title="enter vailde Zip code" autocapitalize="off" required>
+        </div>
+       
+        </div>
+        </div>
+        <div class="row-content">
+            <label for="phoneNumber" class="label text"></label>
+            <br>
+            <input type="tel" class="input" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required>
+            <error-output class="tel-error"></error-output>
+            </div>
+        <div class="buttons-contact">
+        <button type="submit" class="button-submit" id="submit" onsubmit="getRegistration();">Add</button>
+        <button type="reset" class="button-reset" id="reset">Reset</button>
+        </div>
+        </div>
+        </form>
+        </div>
+  
+<script>
+  let addtition = [];
+class arrayStore {
+  addObject(Object) {
+    addtition.push(Object);
+  }
+  showArray() {
+    console.table(addtition);
+  }
+}
+function getRegistration() {
+  var name = document.getElementById("name").value;
+ 
+  var phoneNmber = document.getElementById("phoneNmber").value;
+  var RegexFN = new RegExp("^[A-Z][a-z]{3,}*");
+  var RegexMN = new RegExp("^[9]+[1]+[0-9]{10}");
+  // var RegexP = new RegExp("^[A-Z][a-z0-9]{7,}");
+
+  if (
+    name == "" ||
+    phoneNumber == "" 
+   
+  ) {
+    alert("Please Enter the data");
+        } else if (name <= 20 || !RegexFN.test(name)) {
+    alert("Please Start FullName with capital letter");
+        } else if (!RegexMN.test(phoneNmber)) {
+    alert("Invalid Phone Number and should start with 91");
+  
+       } else {
+    console.log(
+      " name:" +
+        name +
+        
+        "| phoneNmber:" +
+        phoneNumber 
+      );
+    alert("Registration Successful");
+
+    var object = {
+      name: document.getElementById("name").value,
+      phoneNumber: document.getElementById("phoneNumber").value,
+     
+    };
+    console.table(object);
+
+    let store = new arrayStore();
+    store.addObject(object);
+    store.showArray();
+   
+  }
+}
+
+function Reset() {
+  document.getElementById("name").value = "";
+   document.getElementById("phoneNumber").value = "";
+  
+}
+
+</script>
+</html>

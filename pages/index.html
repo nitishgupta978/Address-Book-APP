@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" />
-    <link rel="stylesheet" href="../css/index.css" media="" />
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" media="all"/> -->
+    <link rel="stylesheet" href="../css/index.css" media="all" />
 
     <title>Address Book Form </title>
 </head>
@@ -22,14 +22,17 @@
          </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#"  onsubmit="save(event);return false">
+        <form class="form" action="#"  onsubmit="save(event);return false" onreset="resetButton">
+            <!-- <form action="#" onsubmit=" return validation()"> -->
 
             <!--  UC-2 -->
             
-        <div class="form-head">PERSON ADDRESS FORM  </div>
+        <div class="form-head"><br>
+      <h1 class="text-success text center">  PERSON ADDRESS FORM </h1> <br></div>
             <div class="row-content">
                 <label class="lable text" for="name">full Name</label>
                 <input  class="input" type="text" name="name" id="name" placeholder=" Enter your full Name.." required />
+                <span class="form-error"><br>*this is an error <br/></span>
             </div>
             <br/>
 
@@ -102,16 +105,16 @@
                 <option value="number">Zip Code</option>
             </select> -->
                  <label for="zipcode"></label>
-                 <input type="number" placeholder="Zip Code">
+                 <input type="number" placeholder="Zip Code" pattern=".{6,}" title="enter vailde Zip code" autocapitalize="off">
             </select>
             </div> <br/>
     
             <div class="phone-contant">
                 <label for="digit"></label>
-                <input type="text" placeholder="Phone Number">
+                <input type="text" placeholder="Phone Number" pattern=".{10,}" title="enter vailde Number" autocomplete="off">
             </div> <br/>
 
-            <!-- for buttone -->
+            <!-- UC-5 -->
             <div class="btn-group">
                 <button>Add</button>
             </div>

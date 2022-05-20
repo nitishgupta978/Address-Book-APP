@@ -1,0 +1,238 @@
+<html>
+  <head>
+    <title>Registration Form Copyright Amit 2022</title>
+    <!-- CSS CODE -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #72efdd;
+        font-family: "Helvetica Neue", Helvetica;
+      }
+      #top-section {
+        background-color: #db34d3;
+        width: 100%;
+        height: 60px;
+        text-align: center;
+      }
+      #colorH {
+        color: black;
+        padding-top: 10px;
+      }
+      #main {
+        margin: 150px auto;
+        width: 30%;
+        border: 1px solid black;
+        padding: 10px;
+        background-color: #caf0f8;
+      }
+      .input-tags {
+        margin: 5px;
+      }
+      #email {
+        margin-left: 43px;
+      }
+      #password {
+        margin-left: 13px;
+      }
+      #submit-btn {
+        margin-left: 70px;
+        background-color: green;
+        border: 0.5px solid black;
+        color: #eef0f2;
+      }
+      #reset {
+        background-color: green;
+        border: 0.5px solid black;
+        color: #eef0f2;
+      }
+    </style>
+    <!-- JAVASCRIPT CODE -->
+    <script>
+      let registration = [];
+      class arrayStore {
+        addObject(Object) {
+          registration.push(Object);
+        }
+        showArray() {
+          console.table(registration);
+        }
+      }
+      function getRegistration() {
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var mobileno = document.getElementById("mobileno").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        selectGender = document.querySelector("#gender");
+        var gender = selectGender.value;
+        selectAge = document.querySelector("#age");
+        var age = selectAge.value;
+
+        var RegexFN = new RegExp("^[A-Z][a-z]*");
+        var RegexMN = new RegExp("^[9]+[1]+[0-9]{10}");
+        var RegexP = new RegExp("^[A-Z][a-z0-9]{7,}");
+
+        if (
+          firstName == "" ||
+          lastName == "" ||
+          mobileno == "" ||
+          email == "" ||
+          password == "" ||
+          gender == "Select" ||
+          age == "Select"
+        ) {
+          alert("Please Enter the data");
+        } else if (firstName <= 20 || !RegexFN.test(firstName)) {
+          alert("Please Start FirstName with capital letter");
+        } else if (lastName <= 20 || !RegexFN.test(lastName)) {
+          alert("Please Start LastName with capital letter");
+        } else if (!RegexMN.test(mobileno)) {
+          alert("Invalid Mobile Number and should start with 91");
+        }else if(password >= 8 || !RegexP.test(password)) {
+            alert("Enter Password start with capital letter and must be at least 8 characters");
+        } else {
+          console.log(
+            "First name:" +
+              firstName +
+              "| Last Name:" +
+              lastName +
+              "| Mobile No:" +
+              mobileno +
+              "| Email:" +
+              email +
+              "| Gender:" +
+              gender +
+              "| Age:" +
+              age
+          );
+          alert("Registration Successful");
+
+          var object = {
+            firstname: document.getElementById("firstName").value,
+            lastName: document.getElementById("lastName").value,
+            mobileNo: document.getElementById("mobileno").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+            gender: gender,
+            age: age,
+          };
+          console.table(object);
+
+          let store = new arrayStore();
+          store.addObject(object);
+          store.showArray();
+          // var registrationData=[];
+          // registrationData.push(object);
+          // console.table(registrationData);
+        }
+      }
+
+      function resetFunction() {
+        document.getElementById("firstName").value = "";
+        document.getElementById("lastName").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+        document.getElementById("gender").value = "Select";
+        document.getElementById("age").value = "Select";
+      }
+    </script>
+    
+  </head>
+  <body>
+    <div id="top-section">
+      <h1 id="colorH"><ins>Registration Form</ins></h1>
+    </div>
+    <div id="main" align="center">
+      <table>
+        <tr>
+          <td>
+            <label class="input-tags">First Name:</label>
+            <input
+              id="firstName"
+              class="input-tags"
+              placeholder="First Name"
+              type="text"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="input-tags">Last Name:</label>
+            <input
+              id="lastName"
+              class="input-tags"
+              placeholder="Last Name"
+              type="text"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="input-tags">Mobile No :</label>
+            <input
+              id="mobileno"
+              class="input-tags"
+              placeholder="Mobile Number"
+              type="input"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="input-tags">Email:</label>
+            <input
+              id="email"
+              class="input-tags"
+              placeholder="Email"
+              type="email"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="input-tags">Password:</label>
+            <input
+              id="password"
+              class="input-tags"
+              placeholder="Password"
+              type="password"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="input-tags">Gender:</label>
+            <select id="gender" class="input-tags">
+              <option>Select</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="input-tags">Age:</label>
+            <select id="age" class="input-tags">
+              <option>Select</option>
+              <option>Above 18</option>
+              <option>Below 18</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button
+              id="submit-btn"
+              class="input-tags"
+              onclick="getRegistration()"
+            >
+              Submit
+            </button>
+            <input id="reset" onclick="resetFunction()" type="reset" />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
